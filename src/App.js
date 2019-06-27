@@ -93,9 +93,9 @@ class App extends React.Component {
       return (
         <div>
           <p>Based on past performance (not a guarantee of future performance), if you repositioned your money into Lending Club's Notes,</p>
-          <p>In 1 year you would have, ${this.comma(lcFV1)}</p>
-          <p>In 2 years you would have,${this.comma(lcFV2)}</p>
-          <p>In 3 years you would have, ${this.comma(lcFV3)}</p>
+          <p>In 1 year you would have ${this.comma(lcFV1)}</p>
+          <p>In 2 years you would have ${this.comma(lcFV2)}</p>
+          <p>In 3 years you would have ${this.comma(lcFV3)}</p>
 
           <a href="https://www.lendingclub.com/lenderg/createaccount"><button>Let's get started</button></a>
         </div>
