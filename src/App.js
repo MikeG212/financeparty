@@ -70,11 +70,11 @@ class App extends React.Component {
     return (
       <p>
         You have ${JSON.stringify(this.state.totalDeposit)} in CD's.
-          <p>At this rate, in 1 year you will have, ${totalFV1}</p>
+        <p>At this rate, in 1 year you will have, ${totalFV1}</p>
         <p>In 2 years you will have, ${totalFV2}</p>
         <p>In 3 years you will have, ${totalFV3}</p>
 
-        <p>Over the next 3 years, you're going to lose out on almost <strong>${oppCost3}!</strong></p>
+        <p>Over the next 3 years, you might lose out on almost <strong>${oppCost3}!</strong></p>
         <button onClick={() => this.toggle()}>Tell me more!</button>
 
       </p>
@@ -92,10 +92,10 @@ class App extends React.Component {
     if (this.state.alternative) {
       return (
         <div>
-          <p>Based on current projections, if you repositioned your money into Lending Club's most conversative, secure investment account,</p>
-          <p>In 1 year you will have, ${lcFV1}</p>
-          <p>In 2 years you will have,${lcFV2}</p>
-          <p>In 3 years you will have, ${lcFV3}</p>
+          <p>Based on past performance (not a guarantee of future performance), if you repositioned your money into Lending Club's Notes,</p>
+          <p>In 1 year you would have, ${lcFV1}</p>
+          <p>In 2 years you would have,${lcFV2}</p>
+          <p>In 3 years you would have, ${lcFV3}</p>
 
           <a href="https://www.lendingclub.com/lenderg/createaccount"><button>Let's get started</button></a>
         </div>
