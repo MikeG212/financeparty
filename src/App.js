@@ -25,6 +25,10 @@ class App extends React.Component {
     }
   }
 
+  comma = (num) => {
+    return Number(num).toLocaleString();
+  }
+
   futureValue(rate, nper, pmt, pv) {
     rate /= 100;
     let pow = Math.pow(1 + rate, nper);
@@ -58,8 +62,6 @@ class App extends React.Component {
     let totalFV2 = this.sumFutureValue(2);
     let totalFV3 = this.sumFutureValue(3);
     let totalDeposit = this.state.totalDeposit;
-    let lcFV1 = this.futureValue(4, 1, 0, totalDeposit);
-    let lcFV2 = this.futureValue(4, 2, 0, totalDeposit);
     let lcFV3 = this.futureValue(4, 3, 0, totalDeposit);
     let oppCost3 = lcFV3 - totalFV3;
 
@@ -69,12 +71,12 @@ class App extends React.Component {
 
     return (
       <p>
-        You have ${JSON.stringify(this.state.totalDeposit)} in CD's.
-        <p>At this rate, in 1 year you will have, ${totalFV1}</p>
-        <p>In 2 years you will have, ${totalFV2}</p>
-        <p>In 3 years you will have, ${totalFV3}</p>
+        You have ${this.comma(this.state.totalDeposit)} in CDs.
+        <p>At this rate, in 1 year you will have, ${this.comma(totalFV1)}</p>
+        <p>In 2 years you will have, ${this.comma(totalFV2)}</p>
+        <p>In 3 years you will have, ${this.comma(totalFV3)}</p>
 
-        <p>Over the next 3 years, you might lose out on almost <strong>${oppCost3}!</strong></p>
+        <p>Over the next 3 years, you might lose out on almost <strong>${this.comma(oppCost3)}!</strong></p>
         <button onClick={() => this.toggle()}>Tell me more!</button>
 
       </p>
@@ -83,19 +85,17 @@ class App extends React.Component {
 
 
   renderAlternatives = () => {
-    let totalFV3 = this.sumFutureValue(3);
     let totalDeposit = this.state.totalDeposit;
     let lcFV1 = this.futureValue(4, 1, 0, totalDeposit);
     let lcFV2 = this.futureValue(4, 2, 0, totalDeposit);
     let lcFV3 = this.futureValue(4, 3, 0, totalDeposit);
-    let oppCost3 = lcFV3 - totalFV3;
     if (this.state.alternative) {
       return (
         <div>
           <p>Based on past performance (not a guarantee of future performance), if you repositioned your money into Lending Club's Notes,</p>
-          <p>In 1 year you would have, ${lcFV1}</p>
-          <p>In 2 years you would have,${lcFV2}</p>
-          <p>In 3 years you would have, ${lcFV3}</p>
+          <p>In 1 year you would have, ${this.comma(lcFV1)}</p>
+          <p>In 2 years you would have,${this.comma(lcFV2)}</p>
+          <p>In 3 years you would have, ${this.comma(lcFV3)}</p>
 
           <a href="https://www.lendingclub.com/lenderg/createaccount"><button>Let's get started</button></a>
         </div>
@@ -129,7 +129,7 @@ class App extends React.Component {
         />
         {this.renderResults()}
         {this.renderAlternatives()}
-        <button onClick={() => this.handleClear()}>CLEAR</button>
+        <button className="clear" onClick={() => this.handleClear()}>CLEAR</button>
       </div>
     );
   }
