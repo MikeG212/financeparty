@@ -1,0 +1,25 @@
+.title {
+    font-weight: 200;
+    letter-spacing: 0;
+    font-size: 28px;
+}
+
+input {
+    height: 20px;
+    font-weight: 300;
+    margin: 20px;
+}
+
+button {
+    padding: 14px 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.286;
+    border-color: #2b729d;
+    background-color: #0086d6;
+    text-shadow: -0.588px -0.809px 1px rgba(0,0,0,.25);
+    box-shadow: 0 1px 0 0 #fff;
+    color: white;
+    margin: 10px;
+}
