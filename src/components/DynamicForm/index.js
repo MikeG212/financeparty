@@ -56,7 +56,7 @@ class DynamicForm extends React.Component {
         return (
             <div className={this.props.className}>
                 <h3 className="title"> CDC (Certificate of Depreciation Calculator)</h3>
-                <p>For each CD you own, enter the initial deposit, the period, and the interest rate (%).</p>
+                <p>For each CD you own, enter the initial deposit, the interest rate (%), and the period.</p>
                 <form className="dynamic-form" onSubmit={(e) => { this.onSubmit(e) }}>
                     {this.renderForm()}
                     <div className="form-group">
